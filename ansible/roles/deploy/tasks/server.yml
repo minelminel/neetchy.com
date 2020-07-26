@@ -19,6 +19,9 @@
     dest: "{{ nginx_build_path }}/index.html"
     force: yes
 
+- name: Move static favicon assets
+  command: cp -r "/home/{{ ansible_ssh_user }}/{{ app_name }}/assets/favicon/." "{{ nginx_build_path }}"
+
 - name: Add robots.txt for SEO & Indexing
   become: true
   copy:
