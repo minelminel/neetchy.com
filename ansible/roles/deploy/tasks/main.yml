@@ -1,0 +1,20 @@
+---
+- name: Install Base Packages
+  become: yes
+  include: system.yml
+  tags: ['system']
+
+- name: Set Environment Variables
+  become: yes
+  include: env.yml
+  tags: ['env']
+
+- name: Install Application(s)
+  become: no
+  include: app.yml
+  tags: ['app']
+
+- name: Configure Nginx Server
+  become: yes
+  include: server.yml
+  tags: ['server']

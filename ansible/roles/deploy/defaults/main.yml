@@ -1,0 +1,23 @@
+---
+# defaults file for deploy
+
+# application source code
+repo_url: git@github.com:{{ github_user }}/{{ app_name }}.git
+
+# system packages
+packages:
+  - git
+  - tree
+  - nginx
+  - vim
+
+subdomains:
+  - key: code
+    value: "www.google.com"
+
+nginx_build_path: /var/www/html
+
+# environment variables
+os_environment:
+  - key: LC_ALL
+    value: "C.UTF-8"

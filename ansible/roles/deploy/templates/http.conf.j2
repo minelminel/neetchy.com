@@ -1,0 +1,23 @@
+## homepage
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name {{ hostname }};
+    index index.html;
+    
+    location / {
+        root {{ nginx_build_path }};
+        try_files $uri /index.html;
+    }
+}
+
+{% for key, value in subdomains.items() %}
+## {{ key }}.{{ hostname }}
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name www.{{ key }}.{{ hostname }} {{ key }}.{{ hostname }};
+    return 301 $scheme://{{ value }}$request_uri;
+}
+
+{% endfor %}
