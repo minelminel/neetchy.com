@@ -14,7 +14,7 @@
 ```bash
 ssh -i ~/.ssh/2ko.pem ubuntu@ec2-3-129-102-151.us-east-2.compute.amazonaws.com
 
-ansible-playbook ansible/deploy.yml --inventory ansible/hosts/webserver.ini
+ansible-playbook deploy.yml --inventory hosts/webserver.ini
 ```
 
 ```
