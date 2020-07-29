@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/brand.png') }}" alt="banner-ad-here" height="100" class="glow">
+            </a>
+        </div>
+        <div class="col">
+            <a href="https://liberty3000.com/">
+                <img src="{{ url_for('static', filename='img/lion-banner.1.png') }}" alt="banner-ad-here" height="100" class="glow">
+            </a>
+        </div>
+    </div>
+    {% for item in embeds %}
+    <div class="row">
+        <div class="col">
+            <h3>{{ item.title }}</h3>
+            <iframe width="560" height="315" src="{{ item.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

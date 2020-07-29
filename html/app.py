@@ -22,13 +22,23 @@ def protected(f):
 @app.route('/')
 @protected
 def index():
-    return render_template('index.html', title='Home')
-
-@app.route('/venue')
-@protected
-def venue():
     embed = 'https://www.youtube.com/embed/FptrNy-e8Vw'
-    return render_template('venue.html', title='Venue', embed=embed)
+    return render_template('index.html', title='Home', embed=embed)
+
+@app.route('/archive')
+@protected
+def archive():
+    embeds = [
+        {
+            'url': 'https://www.youtube.com/embed/FptrNy-e8Vw',
+            'title': '"Places" Music Video',
+        },
+        {
+            'url': 'https://www.youtube.com/embed/KvkLBzVb9Q0',
+            'title': '"Cars" Music Video',
+        },
+    ]
+    return render_template('archive.html', title='Archive', embeds=embeds)
 
 @app.route('/_')
 def preview():

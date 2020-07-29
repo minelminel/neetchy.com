@@ -1,5 +1,6 @@
 body {
     padding-top: 50px;
+    color: #ffffff;
 }
 
 .row {
@@ -12,8 +13,7 @@ body {
 }
 
 .navbar {
-    /* background-color: white; */
-    background: linear-gradient(to bottom, rgb(230, 230, 230) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(10, 5, 11, 100) 90%, rgba(0,0,0,0) 100%);
 }
 
 .navbar-nav {
@@ -26,4 +26,55 @@ body {
 .navbar-nav > li {
     display: inline-block;
     float:none;
+}
+
+.content {
+    /* this is needed or the background will be offset by a few pixels at the top */
+    overflow: auto;
+    position: relative;
+}
+
+.content:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  
+    display: block;
+    background-image: url('../img/splash.jpg');
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+  
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    filter: grayscale(40%);
+}
+
+.glow {
+    outline: none;
+    border: none;
+}
+
+.glow:hover { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+iframe {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 20px #9ecaed;
+}
+
+iframe:hover { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 35px #9ecaed;
 }
