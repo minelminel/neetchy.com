@@ -1,5 +1,4 @@
 ---
-# prepare system and update packages
 - name: Update apt & cache
   become: true
   apt:
@@ -15,3 +14,13 @@
     state: latest
     update_cache: yes
     force_apt_get: true
+
+- name: Upgrade pip core packages
+  pip:
+    name: "{{ pip_core }}"
+    state: latest
+
+- name: Install Python core requirements
+  pip:
+    name: "{{ python_core }}"
+    state: present

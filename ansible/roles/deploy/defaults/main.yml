@@ -6,10 +6,21 @@ repo_url: https://github.com/{{ github_user }}/{{ app_name }}.git
 
 # system packages
 packages:
+  - python3-dev
+  - python3-pip
   - git
   - tree
   - nginx
   - vim
+
+pip_core:
+  - pip
+  - setuptools
+  - wheel
+
+python_core:
+  - virtualenv
+  - requests
 
 subdomains:
   - key: code
@@ -18,6 +29,7 @@ subdomains:
   #   value: "https://"
 
 nginx_build_path: /var/www/html
+wsgi_module_path: "/home/{{ ansible_ssh_user }}/{{ app_name }}/html/wsgi.py"
 
 # environment variables
 os_environment:

@@ -1,5 +1,17 @@
 ---
-# set up nginx service, enable, and restart
+- name: Template systemd gunicorn config
+  template:
+    src: templates/gunicorn.service.j2
+    dest: /etc/systemd/system/gunicorn.service
+    force: yes
+
+- name: Start systemd app service
+  systemd:
+    name: gunicorn.service
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
 - name: Template nginx global config
   template:
     src: templates/nginx.conf.j2
@@ -12,13 +24,6 @@
     dest: /etc/nginx/conf.d/{{ app_name }}.conf
     force: yes
 
-- name: Add static homepage (TEMPORARY)
-  become: true
-  copy:
-    src: files/index.html
-    dest: "{{ nginx_build_path }}/index.html"
-    force: yes
-
 - name: Move static favicon assets
   command: cp -r "/home/{{ ansible_ssh_user }}/{{ app_name }}/assets/favicon/." "{{ nginx_build_path }}"
 
@@ -28,6 +33,15 @@
     src: files/robots.txt
     dest: "{{ nginx_build_path }}/robots.txt"
     force: yes
+
+- name: Ensure build directory has appropriate permissions
+  become: yes
+  file:
+    path: "{{ nginx_build_path }}"
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
 
 - name: Restart nginx
   systemd:

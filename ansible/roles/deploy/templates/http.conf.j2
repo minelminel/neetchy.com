@@ -1,4 +1,4 @@
-## homepage
+## preview
 server {
     listen 80;
     listen 443 ssl;
@@ -6,8 +6,8 @@ server {
     index index.html;
     
     location / {
-        root {{ nginx_build_path }};
-        try_files $uri /index.html;
+        include proxy_params;
+        proxy_pass http://127.0.0.1:8000/;
     }
 }
 

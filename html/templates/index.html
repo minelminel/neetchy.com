@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('venue') }}">
+                    <img src="{{ url_for('static', filename='img/venue.png') }}" alt="venue" height="100">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://liberty3000.com/">
+                    <img src="{{ url_for('static', filename='img/shop.png') }}" alt="shop" height="100">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/brand.png') }}" alt="brand">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{ url_for('static', filename='img/splash.jpg') }}" alt="splash">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

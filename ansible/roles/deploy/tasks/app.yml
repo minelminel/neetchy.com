@@ -1,5 +1,4 @@
 ---
-# fetch source code and install
 - name: Clone source repository
   git:
     repo: "{{ repo_url }}"
@@ -9,7 +8,9 @@
     force: yes
   become_user: "{{ ansible_ssh_user }}"
 
-# move the neetchy.com html folder into place
-- name: Move HTML assets into NGINX path
-  become: true
-  command: mv "/home/{{ ansible_ssh_user }}/{{ app_name }}/html/*" "{{ nginx_build_path }}"
+- name: Install virtualenv packages
+  pip:
+    requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/html/requirements.txt
+    virtualenv: /home/{{ ansible_ssh_user }}/{{ app_name }}/html/env
+    virtualenv_python: python3
+  become_user: "{{ ansible_ssh_user }}"
