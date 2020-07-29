@@ -18,3 +18,8 @@
   become: yes
   include: server.yml
   tags: ['server']
+
+- name: Ensure Availability
+  become: no
+  include: test.yml
+  tags: ['test']
