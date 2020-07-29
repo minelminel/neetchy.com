@@ -22,14 +22,14 @@ python_core:
   - virtualenv
   - requests
 
-subdomains:
-  - key: code
-    value: "www.google.com"
+subdomains: {}
+  # - key: code
+  #   value: "https://google.com"
   # - key: venue
   #   value: "https://"
 
 nginx_build_path: /var/www/html
-wsgi_module_path: "/home/{{ ansible_ssh_user }}/{{ app_name }}/html/wsgi.py"
+wsgi_path: wsgi
 
 # environment variables
 os_environment:
