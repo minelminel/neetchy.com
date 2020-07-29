@@ -9,6 +9,8 @@ app = Flask(__name__)
 def protected(f):
     @wraps(f)
     def wrap(*args, **kwargs):
+        if app.debug:
+            return f(*args, **kwargs)
         launches = datetime.datetime(2020, 7, 31, 22, 0)
         live =  (datetime.datetime.now().timestamp() - launches.timestamp()) >= 0
         if not live:
