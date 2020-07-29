@@ -1,5 +1,5 @@
 ---
-  # fetch source code and install
+# fetch source code and install
 - name: Clone source repository
   git:
     repo: "{{ repo_url }}"
@@ -8,3 +8,8 @@
     update: yes  # Does a git pull if the repo already exists
     force: yes
   become_user: "{{ ansible_ssh_user }}"
+
+# move the neetchy.com html folder into place
+- name: Move HTML assets into NGINX path
+  become: true
+  command: mv "/home/{{ ansible_ssh_user }}/{{ app_name }}/html/*" "{{ nginx_build_path }}"
