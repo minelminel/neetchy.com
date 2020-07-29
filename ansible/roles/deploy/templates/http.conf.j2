@@ -17,7 +17,7 @@ server {
     listen 80;
     listen 443 ssl;
     server_name www.{{ item.key }}.{{ hostname }} {{ item.key }}.{{ hostname }};
-    return 301 $scheme://{{ item.value }}$request_uri;
+    return 302 $scheme://{{ item.value }}$request_uri;
 }
 
 {% endfor %}
