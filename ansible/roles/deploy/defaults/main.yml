@@ -27,7 +27,7 @@ python_core:
 
 subdomains: 
   - key: code
-    value: "https://google.com"
+    value: "{{ qr_code_redirect_url }}"
 
 source_path: /usr/share/nginx/{{ app_name }}
 nginx_build_path: /var/www/html

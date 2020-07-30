@@ -11,7 +11,7 @@ def protected(f):
     def wrap(*args, **kwargs):
         if app.debug:
             return f(*args, **kwargs)
-        launches = datetime.datetime(2020, 7, 31, 22, 0)
+        launches = datetime.datetime(2020, 7, 31, 21, 0)
         live =  (datetime.datetime.now().timestamp() - launches.timestamp()) >= 0
         if not live:
             return redirect(url_for('preview'))
