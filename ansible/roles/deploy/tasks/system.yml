@@ -2,10 +2,22 @@
 - name: Update apt & cache
   become: true
   apt:
-    upgrade: 'yes'
-    update_cache: 'yes'
+    upgrade: "yes"
+    update_cache: "yes"
     force_apt_get: true
     cache_valid_time: 36000
+
+- name: Enable universe repository
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+
+- name: Add Certbot repository
+  apt_repository:
+    repo: ppa:certbot/certbot
 
 - name: Install system package dependencies
   become: true

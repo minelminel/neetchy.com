@@ -1,16 +1,16 @@
 ---
 - name: Clone source repository
+  become: yes
   git:
     repo: "{{ repo_url }}"
-    dest: /home/{{ ansible_ssh_user }}/{{ app_name }}
+    dest: "{{ source_path }}"
     version: "{{ git_branch }}"   # SHA-1 hash, the literal string HEAD, a branch name, or a tag name
     update: yes  # Does a git pull if the repo already exists
     force: yes
-  become_user: "{{ ansible_ssh_user }}"
 
 - name: Install virtualenv packages
+  become: yes
   pip:
-    requirements: /home/{{ ansible_ssh_user }}/{{ app_name }}/html/requirements.txt
-    virtualenv: /home/{{ ansible_ssh_user }}/{{ app_name }}/html/env
+    requirements: "{{ source_path }}/html/requirements.txt"
+    virtualenv: "{{ source_path }}/html/env"
     virtualenv_python: python3
-  become_user: "{{ ansible_ssh_user }}"

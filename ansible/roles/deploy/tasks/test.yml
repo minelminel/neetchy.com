@@ -1,4 +1,4 @@
 ---
 - name: Check that homepage return a 200 status
   uri:
-    url: http://{{ inventory_hostname }}/
+    url: https://{{ hostname }}/

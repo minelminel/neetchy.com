@@ -12,6 +12,9 @@ packages:
   - tree
   - nginx
   - vim
+  - software-properties-common
+  - certbot
+  - python3-certbot-nginx
 
 pip_core:
   - pip
@@ -22,12 +25,11 @@ python_core:
   - virtualenv
   - requests
 
-subdomains: {}
-  # - key: code
-  #   value: "https://google.com"
-  # - key: venue
-  #   value: "https://"
+subdomains: 
+  - key: code
+    value: "https://google.com"
 
+source_path: /usr/share/nginx/{{ app_name }}
 nginx_build_path: /var/www/html
 wsgi_path: wsgi
 

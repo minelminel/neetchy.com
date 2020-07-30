@@ -5,10 +5,10 @@ After=network.target
 [Service]
 User={{ ansible_ssh_user }}
 Group=www-data
-WorkingDirectory=/home/{{ ansible_ssh_user }}/{{ app_name }}/html
+WorkingDirectory={{ source_path }}/html
 EnvironmentFile=/etc/environment
-Environment="PATH=/home/{{ ansible_ssh_user }}/{{ app_name }}/html/env/bin"
-ExecStart=/home/{{ ansible_ssh_user }}/{{ app_name }}/html/env/bin/gunicorn \
+Environment="PATH={{ source_path }}/html/env/bin"
+ExecStart={{ source_path }}/html/env/bin/gunicorn \
         --workers 3 \
         --bind 127.0.0.1:8000 \
         {{ wsgi_path }}:application \

@@ -1,5 +1,5 @@
 ---
-- name: Execute EC2 deployment roles
+- name: Deploy app to running EC2 instance
   hosts: webserver
   become: yes
   gather_facts: False

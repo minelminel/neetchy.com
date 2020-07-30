@@ -1,0 +1,20 @@
+## /etc/letsencrypt/config/{{ hostname }} config file
+## $ sudo systemctl stop nginx
+## $ sudo certbot --standalone --config /etc/letsencrypt/configs/{{ hostname }}.conf certonly
+## $ sudo systemctl restart nginx
+
+# domains to retrieve certificate
+domains = {{ hostname }}
+
+# increase key size
+rsa-key-size = 4096
+
+# the CA endpoint server
+#server = https://acme-staging-v02.api.letsencrypt.org/directory
+server = https://acme-v02.api.letsencrypt.org/directory
+
+# the email to receive renewal reminders, IIRC
+email = {{ admin_email }}
+
+# turn off the ncurses UI, we want this to be run as a cronjob
+text = True
