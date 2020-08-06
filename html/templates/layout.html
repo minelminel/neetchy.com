@@ -28,8 +28,21 @@
     </div>
 </nav>
 
-<main class="content">{% block body %}{% endblock %}</main>
-
+<main class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='img/brand.png') }}" alt="brand" class="glow" style="max-width: 100%;">
+                </a>
+            </div>
+        </div>
+        {% block body %}
+        <!-- TEMPLATED PAGES APPEAR HERE -->
+        {% endblock %}
+    </div>
+</main>
+        
 </script>
     <!-- Optional JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
