@@ -1,29 +1,22 @@
 {% extends 'layout.html' %}
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <a href="{{ url_for('archive') }}">
-                <img src="{{ url_for('static', filename='img/archive.png') }}" alt="venue" height="100" class="glow">
-            </a>
-        </div>
-        <div class="col">
-            <a href="https://liberty3000.com/collections/">
-                <img src="{{ url_for('static', filename='img/shop.png') }}" alt="shop" height="100" class="glow">
-            </a>
-        </div>
+<div class="row" style="flex-wrap: nowrap;">
+    <div class="col">
+        <a href="{{ url_for('archive') }}">
+            <img src="{{ url_for('static', filename='img/archive.png') }}" alt="venue" style="max-width: 50%;" class="glow">
+        </a>
     </div>
-    <div class="row">
-        <div class="col">
-            <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/brand.png') }}" alt="brand" class="glow">
-            </a>
-        </div>
+    <div class="col">
+        <a href="https://liberty3000.com/collections/">
+            <img src="{{ url_for('static', filename='img/shop.png') }}" alt="shop" style="max-width: 50%;" class="glow">
+        </a>
     </div>
-    <!-- MAIN PAGE CONTENT -->
-    <div class="row">
-        <div class="col">
-            <iframe width="560" height="315" src="{{ embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!-- MAIN PAGE CONTENT -->
+<div class="row">
+    <div class="col">
+        <div class="video-container">
+            <iframe class="video" width="560" height="315" src="{{ embed }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </div>

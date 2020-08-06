@@ -17,15 +17,14 @@ body {
 }
 
 .navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: block;
+    float: none;
+    margin: 0 auto;
     text-align: center;
 }
 
 .navbar-nav > li {
     display: inline-block;
-    float:none;
+    float: none;
 }
 
 .content {
@@ -77,4 +76,19 @@ iframe:hover {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 35px #9ecaed;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

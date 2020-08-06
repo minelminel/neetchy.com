@@ -19,6 +19,8 @@
   apt_repository:
     repo: ppa:certbot/certbot
 
+# sudo certbot --standalone --config /etc/letsencrypt/configs/{{hostname}}.conf certonly
+
 - name: Install system package dependencies
   become: true
   apt:
