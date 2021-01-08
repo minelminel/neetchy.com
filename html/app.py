@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
 import datetime
 from flask import Flask, render_template, url_for, redirect
 
@@ -7,10 +8,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    embed = 'https://www.youtube.com/embed/qvWEVPlJyAo'
-    start = 726  # value in seconds
-    embed = '{}?start={}'.format(embed, start) if start else embed
-    return render_template('index.html', title='Home', embed=embed)
+    with open("embed.json", "r") as file:
+        data = json.load(file)
+    embed = data["embed"]
+    start = data["start"]
+    #embed = 'https://www.youtube.com/embed/qvWEVPlJyAo'
+    #start = 726  # value in seconds
+    return render_template('index.html', 
+        title='Home', embed='{}?start={}'.format(embed, start) if start else embed
+    )
 
 @app.route('/archive')
 def archive():
