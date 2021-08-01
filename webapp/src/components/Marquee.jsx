@@ -13,7 +13,7 @@ export default function Marquee() {
       <img
         alt={`Album Artwork`}
         src={artwork}
-        style={{ height: `75vh`, width: `75vh`, marginBottom: `15px` }}
+        style={{ maxHeight: `300px`, maxWidth: `300px`, marginBottom: `15px` }}
       />
     </Container>
   );

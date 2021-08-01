@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "location": "Duende (Silo City)",
+      "date": "Sat, Aug 7th",
+      "time": "4PM",
+      "text": "Come out and enjoy live music on the patio, featuring a split set of performances with the full band and Neetchy solo project."
+    },
+    {
+      "location": "Localpalooza @ Resurgence Brewing",
+      "date": "Fri, Aug 20th",
+      "time": "8PM",
+      "text": "Band Together Buffalo presents 12 Local Bands over 3 days at Resurgence Brewing Co! $20 for a 3-Day Weekend Pass - General Admission includes a FREE drink ticket.",
+      "link": "https://www.eventbrite.com/e/localpalooza-at-resurgence-brewing-co-tickets-16392242739",
+      "action": "Get Tickets"
+    },
+    {
+      "location": "Nietzsche's",
+      "date": "Fri, Aug 27th",
+      "time": "10PM",
+      "text": "Neetchy's Birthday Bash is happening at none other than the eponymous venue. A full night of music with 4 different artists all taking part. You won't want to miss this!"
+    }
+  ]
+}
