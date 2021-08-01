@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: 
+  radial-gradient(
+    circle at top left,
+    /* rgba(255, 255, 255, 0.5),  */
+    #763B50,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at top right,
+    /* rgba(255, 255, 255, 0.5),  */
+    #D99F7F,
+    transparent 50%
+  ),
+  radial-gradient(
+    at bottom left,
+    /* rgba(255, 0, 255, 0.5),  */
+    #9987AD,
+    transparent 50%
+  ),
+  radial-gradient(
+    at bottom right,
+    /* rgba(255, 100, 100, 0.5),  */
+    #ABAAAE,
+    transparent 50%
+  );
+}
+
+.content:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  /* background-image: url('./static/img/background-image.jpg'); */
+  background-size: cover;
+  background-position: left -450px bottom 100px;
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.content {
+  /* this is needed or the background will be offset by a few pixels at the top */
+  overflow: auto;
+  position: relative;
+  margin: auto;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+  .content:before {}
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  .content:before {}
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .content:before {}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  .content:before {}
+}
