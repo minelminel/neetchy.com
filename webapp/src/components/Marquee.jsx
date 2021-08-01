@@ -10,7 +10,11 @@ export default function Marquee() {
       <h3>
         New Album: <i>'Songs For, And About You'</i> Available Now
       </h3>
-      <img src={artwork} style={{ height: `75vh`, width: `75vh`, marginBottom: `15px` }} />
+      <img
+        alt={`Album Artwork`}
+        src={artwork}
+        style={{ height: `75vh`, width: `75vh`, marginBottom: `15px` }}
+      />
     </Container>
   );
 }
