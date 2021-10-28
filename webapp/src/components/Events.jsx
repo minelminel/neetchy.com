@@ -4,9 +4,9 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 const Event = (props) => {
-  const { date, time, text, location, link, action } = props;
+  const { date, time, text, location, link, action, style } = props;
   return (
-    <Card className="mb-2">
+    <Card className="mb-2" style={style}>
       <Card.Body>
         <Card.Title>{`${date} - ${location}`}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{time}</Card.Subtitle>
@@ -27,7 +27,8 @@ Event.defaultProps = {
   time: '7PM',
   text: 'Summary information',
   link: null,
-  action: 'More Info'
+  action: 'More Info',
+  style: {}
 };
 
 export default function Events(props) {

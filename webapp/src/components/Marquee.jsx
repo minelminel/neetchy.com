@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import artwork from '../static/img/album-art.png';
+import artwork from '../static/img/scene-daddy.jpeg';
 
 const style = { textAlign: `center`, fontFamily: `TimesNewRoman` };
 
@@ -8,7 +8,7 @@ export default function Marquee() {
   return (
     <Container style={style}>
       <h3>
-        New Album: <i>'Songs For, And About You'</i> Available Now
+        New Singles: <i>'One I Wanna Be'</i> &amp; <i>'Spaghetti and Wine'</i> Out Now
       </h3>
       <img
         alt={`Album Artwork`}
