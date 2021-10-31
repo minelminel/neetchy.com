@@ -2,13 +2,13 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import artwork from '../static/img/scene-daddy.jpeg';
 
-const style = { textAlign: `center`, fontFamily: `TimesNewRoman` };
+const style = { textAlign: `center` };
 
 export default function Marquee() {
   return (
     <Container style={style}>
       <h3>
-        New Singles: <i>'One I Wanna Be'</i> &amp; <i>'Spaghetti and Wine'</i> Out Now
+        New Single: <i>'Time On My Side'</i> Out Now
       </h3>
       <img
         alt={`Album Artwork`}

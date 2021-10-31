@@ -35,7 +35,7 @@ export default function Events(props) {
   const { children } = props;
   return (
     <Container>
-      <h3>Upcoming Events</h3>
+      {children.length > 0 && <h3>Upcoming Events</h3>}
       {children}
     </Container>
   );
