@@ -1,19 +1,24 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import artwork from '../static/img/scene-daddy.jpeg';
-
-const style = { textAlign: `center` };
+import artwork from '../static/img/jerry2.jpeg';
 
 export default function Marquee() {
+  // if our visible screen height (minus some offset) is greater
+  // than the heigh of the image, resize the image so the whole
+  // thing is visible without scrolling on mobile
+  const [width, height] = [500, 500];
+
+  const innerWidth = window.innerWidth;
+  const innerHeight = window.innerHeight;
+
+  const style = { textAlign: `center` };
+
   return (
     <Container style={style}>
-      <h3>
-        New Single: <i>'Time On My Side'</i> Out Now
-      </h3>
       <img
         alt={`Album Artwork`}
         src={artwork}
-        style={{ maxHeight: `300px`, maxWidth: `300px`, marginBottom: `15px` }}
+        style={{ maxHeight: `100%`, maxWidth: `100%`, marginBottom: `15px` }}
       />
     </Container>
   );

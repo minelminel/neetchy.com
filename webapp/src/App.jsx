@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
 import Header from './components/Header';
-import Banner from './components/Banner';
+// import Banner from './components/Banner';
 import Content from './components/Content';
 import Marquee from './components/Marquee';
-import Events from './components/Events';
+// import Events from './components/Events';
 
 import analytics from './Analytics';
 
-import data from './data';
+// import data from './data';
 
 export default function App() {
   useEffect(() => {
@@ -22,13 +22,13 @@ export default function App() {
     <React.Fragment>
       <Header />
       <Content>
-        <Banner />
+        {/* <Banner /> */}
         <Marquee />
-        <Events>
+        {/* <Events>
           {data.events?.map((event, index) => (
             <Events.Event {...event} key={index} />
           ))}
-        </Events>
+        </Events> */}
       </Content>
     </React.Fragment>
   );
