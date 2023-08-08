@@ -8,7 +8,7 @@ const LINKS = {
   facebook: 'https://www.facebook.com/TheRealNeetchy/',
   soundcloud: 'https://soundcloud.com/neetchy',
   youtube: 'https://www.youtube.com/channel/UCtf4MfFGZI1yJdWVjA35a5g',
-  spotify: 'https://open.spotify.com/artist/3kuSSBMr6oa64SorrCxmYC?si=HiHshxGdRPqVqjRpkNNQXg',
+  spotify: 'https://open.spotify.com/artist/3q3AeIgVskTvUsaBjhL7CK',
   apple: 'https://music.apple.com/us/artist/neetchy/1462015908'
 };
 

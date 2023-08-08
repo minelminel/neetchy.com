@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+:root {
+  /* --color-top-left: #26547C; */
+  /* --color-top-right: #EF476F; */
+  /* --color-bottom-left: #FFD166; */
+  /* --color-bottom-right: #06D6A0; */
+  --color-top-left: #F4B9BC;
+  --color-top-right: #F4CC99;
+  --color-bottom-left: #F5B67B;
+  --color-bottom-right: #F4B9BC;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -16,25 +27,25 @@ body {
   radial-gradient(
     circle at top left,
     /* rgba(255, 255, 255, 0.5),  */
-    #26547C,
+    var(--color-top-left),
     transparent 50%
   ),
   radial-gradient(
     circle at top right,
     /* rgba(255, 255, 255, 0.5),  */
-    #EF476F,
+    var(--color-top-right),
     transparent 50%
   ),
   radial-gradient(
     at bottom left,
     /* rgba(255, 0, 255, 0.5),  */
-    #FFD166,
+    var(--color-bottom-left),
     transparent 50%
   ),
   radial-gradient(
     at bottom right,
     /* rgba(255, 100, 100, 0.5),  */
-    #06D6A0,
+    var(--color-bottom-right),
     transparent 50%
   );
 }
