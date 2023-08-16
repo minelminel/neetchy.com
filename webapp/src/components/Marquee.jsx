@@ -8,10 +8,10 @@ export default function Marquee() {
   // thing is visible without scrolling on mobile
 
   // const [width, height] = [500, 500];
-  // const innerWidth = window.innerWidth;
+  const innerWidth = window.innerWidth;
   // const innerHeight = window.innerHeight;
 
-  const style = { textAlign: `center` };
+  const style = { textAlign: `center`, maxWidth: `${Math.min(innerWidth, 720)}px` };
 
   return (
     <Container style={style}>
