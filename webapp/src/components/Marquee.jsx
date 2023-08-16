@@ -3,15 +3,15 @@ import Container from 'react-bootstrap/Container';
 import artwork from '../static/img/jerry2.jpeg';
 
 export default function Marquee() {
-  // if our visible screen height (minus some offset) is greater
+  // TODO: if our visible screen height (minus some offset) is greater
   // than the heigh of the image, resize the image so the whole
   // thing is visible without scrolling on mobile
-  const [width, height] = [500, 500];
 
+  // const [width, height] = [500, 500];
   const innerWidth = window.innerWidth;
-  const innerHeight = window.innerHeight;
+  // const innerHeight = window.innerHeight;
 
-  const style = { textAlign: `center` };
+  const style = { textAlign: `center`, maxWidth: `${Math.min(innerWidth, 720)}px` };
 
   return (
     <Container style={style}>
